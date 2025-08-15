@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Upload | AI Summarizer{% endblock %}
+
+{% block content %}
+<div class="card">
+  <h1>Summarize your document</h1>
+  <p class="muted">Upload a file (PDF, DOCX, TXT, or an image for OCR)</p>
+
+  <form method="POST" enctype="multipart/form-data">
+    <label class="label">Choose file</label>
+    <input class="input-file" type="file" name="document" accept=".pdf,.docx,.txt,.png,.jpg,.jpeg" required>
+
+    <div class="grid-2">
+      <div>
+        <label class="label">Summary length (sentences)</label>
+        <select name="sentences" class="input-select">
+          <option value="3">Short (3)</option>
+          <option value="5" selected>Medium (5)</option>
+          <option value="8">Long (8)</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" class="btn">Summarize</button>
+  </form>
+</div>
+{% endblock %}
